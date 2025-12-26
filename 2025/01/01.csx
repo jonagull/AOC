@@ -9,11 +9,16 @@ enum MapDirection
     Decrement
 }
 
+main();
+Console.WriteLine("============================");
+Console.WriteLine("THE ANSWER:");
+Console.WriteLine(counter);
+Console.WriteLine("===========================");
+
 private void main()
 {
     foreach (string line in lines)
     {
-        // Console.WriteLine(line);
         if (!string.IsNullOrEmpty(line))
         {
             handleInput(line);
@@ -29,28 +34,12 @@ private void handleInput(string input)
 
     direction = letter == "R" ? MapDirection.Increment : MapDirection.Decrement;
 
-    // Console.WriteLine(letter);
-    // Console.WriteLine(number);
-    // Console.WriteLine(direction);
-
-    // Console.WriteLine("+++++++++++++++++++++++++++++++=");
-    // Console.WriteLine(startNumber);
-    // Console.WriteLine("+++++++++++++++++++++++++++");
-
     for (int i = 0; i < number; i++)
     {
         if (direction == MapDirection.Increment)
         {
-            // if (startNumber == 0)
-            // {
-            //     counter++;
-            // }
-
             checkNum();
-
             startNumber++;
-
-
 
             if (startNumber == 100)
             {
@@ -61,16 +50,8 @@ private void handleInput(string input)
         }
         else
         {
-            // Console.WriteLine(direction);
-            // if (startNumber == 0)
-            // {
-            //     counter++;
-            // }
-
             checkNum();
-
             startNumber--;
-
 
             if (startNumber == -1)
             {
@@ -81,11 +62,6 @@ private void handleInput(string input)
 
         }
     }
-
-    // if (startNumber == 0)
-    // {
-    //     counter++;
-    // }
 }
 
 private void checkNum()
@@ -95,10 +71,3 @@ private void checkNum()
         counter++;
     }
 }
-
-main();
-Console.WriteLine("============================");
-Console.WriteLine("THE ANSWER:");
-Console.WriteLine(counter);
-
-Console.WriteLine("===========================");
